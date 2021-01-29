@@ -1,21 +1,41 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
+import Blog from '../views/blog/index.vue'
+import Show from '../views/blog/Show.vue'
+import PageNotFound from '../views/PageNotFound'
 
 
 const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    redirect : '/blog'
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: About
+  },
+  {
+    path: '/blog',
+    name: 'Blog',
+    component: Blog
+  }
+  ,
+  {
+    path: '/blog/:id/:slug',
+    name: 'post-show',
+    component: Show,
+    props : true
+  }
+  ,
+  {
+    path: '/posts',
+    redirect : '/blog'
+  },{
+  path :'/:catchAll(.*)',
+  component : PageNotFound,
   }
 ]
 

@@ -1,8 +1,7 @@
 <template lang="">
-    <div>
-        <h1> Show Post </h1>
-        <h1> {{ id }} - {{ slug }}</h1>
-        <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla numquam deserunt non veniam doloremque ea sed error nostrum quae aliquid! </p>
+    <div v-if="post">
+        <h1> {{ post.title }} </h1>
+        <p> {{post.content}} </p>
     </div>
     
 </template>
@@ -11,8 +10,15 @@ export default {
     props : ['id','slug'],
     data() {
         return {
-            id : this.$route.params.id ,
+            
+            post : null
         }
+    },
+    mounted() {
+        fetch(`http://localhost:5000/posts/${this.id}`)
+        .then( res => res.json() )
+        .then( data => this.post = data )
+        .catch( err => console.log(err))
     },
     
 }

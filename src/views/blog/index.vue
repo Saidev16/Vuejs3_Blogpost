@@ -8,7 +8,7 @@
                 <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </p>    
     </div>
-    <div class="row">
+    <div class="row" v-if="posts.length">
         <div class="col-md-6" v-for=" post in posts " :key='post.id'>
             <h1> <router-link :to="{name:'post-show' , params:{id: post.id , slug:post.slug}}">{{post.title}}</router-link> </h1>
             <p class="lead"> {{ post.content }} </p>
@@ -20,45 +20,16 @@
 export default {
     data() {
         return {
-            posts : [
-                {
-                    id : '1',
-                    title : 'Learn Angular',
-                    slug : 'Learn-angular',
-                    content : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a.'
-                },
-                {
-                    id : '2',
-                    title : 'Learn React',
-                    slug : 'Learn-React',
-                    content : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a.'
-                },
-                {
-                    id : '3',
-                    title : 'Learn Vuejs3',
-                    slug : 'Learn-Vuejs3',
-                    content : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a.'
-                },
-                {
-                    id : '4',
-                    title : 'Learn Laravel',
-                    slug : 'Learn-Laravel',
-                    content : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a.'
-                },
-                {
-                    id : '5',
-                    title : 'Learn Javascript',
-                    slug : 'Learn-Javascript',
-                    content : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a.'
-                },
-                {
-                    id : '6',
-                    title : 'Learn Php',
-                    slug : 'Learn-php',
-                    content : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a.'
-                },
-            ]
+           posts : [
+
+           ]
         }
+    },
+    mounted() {
+        fetch('http://localhost:5000/posts')
+        .then( res => res.json() )
+        .then( data => this.posts = data )
+        .catch( err => console.log(err) )
     },
     
 }

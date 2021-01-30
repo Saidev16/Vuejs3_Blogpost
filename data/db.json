@@ -1,0 +1,41 @@
+{
+    "posts" : [
+        {
+            "id" : 1,
+            "title" : "Learn Angular",
+            "slug" : "Learn-angular",
+            "content" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
+        },
+        {
+            "id" : 2,
+            "title" : "Learn React",
+            "slug" : "Learn-React",
+            "content" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
+        },
+        {
+            "id" : 3,
+            "title" : "Learn Vuejs3",
+            "slug" : "Learn-Vuejs3",
+            "content" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
+        },
+        {
+            "id" : 4,
+            "title" : "Learn Laravel",
+            "slug" : "Learn-Laravel",
+            "content" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
+        },
+        {
+            "id" : 5,
+            "title" : "Learn Javascript",
+            "slug" : "Learn-Javascript",
+            "content" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
+        },
+        {
+            "id" : 6,
+            "title" : "Learn Php",
+            "slug" : "Learn-php",
+            "content" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
+        }
+    ],
+    "users": []
+}

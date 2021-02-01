@@ -8,7 +8,7 @@
 <script>
 export default {
     props : ['id','slug'],
-    data() {
+    data() { 
         return {
             
             post : null

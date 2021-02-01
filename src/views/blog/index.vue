@@ -1,25 +1,28 @@
 <template lang="">
-    <div class="jumbotron">
-            <h1 class="display-3">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-            </p>    
+    
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <router-link to="/new" class="btn btn-primary">ADD</router-link>
+        </div>
     </div>
+
     <div class="row" v-if="posts.length">
-        <div class="col-md-6" v-for=" post in posts " :key='post.id'>
-            <h1> <router-link :to="{name:'post-show' , params:{id: post.id , slug:post.slug}}">{{post.title}}</router-link> </h1>
-            <p class="lead"> {{ post.content }} </p>
+        <div class="col-md-12 my-4" v-for=" post in posts " :key='post.id'>
+            
+            <OnePost :post="post" @delete="handleDelete" />
         </div>
     </div>
 
 </template>
 <script>
+import OnePost from './OnePost';
 export default {
+    components : {
+        OnePost
+    },
     data() {
         return {
+            
            posts : [
 
            ]
@@ -30,6 +33,12 @@ export default {
         .then( res => res.json() )
         .then( data => this.posts = data )
         .catch( err => console.log(err) )
+    },
+    methods: {
+        handleDelete(id){
+            this.posts = this.posts.filter( post=> post.id != id );
+            
+        }
     },
     
 }

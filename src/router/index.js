@@ -4,6 +4,7 @@ import About from '../views/About.vue'
 import Blog from '../views/blog/index.vue'
 import Show from '../views/blog/Show.vue'
 import PageNotFound from '../views/PageNotFound'
+import Create from '../views/blog/Create'
 
 
 const routes = [
@@ -34,7 +35,12 @@ const routes = [
   {
     path: '/posts',
     redirect : '/blog'
-  },{
+  },
+  {
+    path: '/new',
+    component : Create
+  },
+  {
   path :'/:catchAll(.*)',
   component : PageNotFound,
   }

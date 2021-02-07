@@ -5,6 +5,7 @@ import Blog from '../views/blog/index.vue'
 import Show from '../views/blog/Show.vue'
 import PageNotFound from '../views/PageNotFound'
 import Create from '../views/blog/Create'
+import Edit from '../views/blog/Edit'
 
 
 const routes = [
@@ -39,6 +40,12 @@ const routes = [
   {
     path: '/new',
     component : Create
+  },
+  {
+    path: '/edit/:id',
+    name : 'post-edit',
+    component : Edit,
+    props : true
   },
   {
   path :'/:catchAll(.*)',

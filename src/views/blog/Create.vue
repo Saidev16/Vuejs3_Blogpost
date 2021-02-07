@@ -1,4 +1,10 @@
 <template lang="">
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <router-link to="/blog" class="btn btn-primary">Back to Blog</router-link>
+        </div>
+    </div>
+
     <div class="row my-4" >
         <div class="col-md-6 mx-auto">
             <h1 class="my-2">New Post</h1>

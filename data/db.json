@@ -2,13 +2,13 @@
   "posts": [
     {
       "id": 1,
-      "title": "Learn Angular",
+      "title": "Learn Angular 2021",
       "slug": "Learn-angular",
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
     },
     {
       "id": 2,
-      "title": "Learn React",
+      "title": "Learn ReactJS",
       "slug": "Learn-React",
       "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
     },
@@ -22,7 +22,7 @@
       "id": 4,
       "title": "Learn Laravel",
       "slug": "Learn-Laravel",
-      "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, a."
+      "content": "Learn Laravel with this exclusive course"
     },
     {
       "id": 5,
